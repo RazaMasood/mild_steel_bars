@@ -1,0 +1,20 @@
+TRAINING_PARAMETERS:
+  PRETRAINED_MODEL: yolov5s.pt
+  BATCH_SIZE: 2
+  IMAGE_SIZE: 320
+  EPOCH: 1
+  PROJRCT: artifacts/model_training
+
+  EXPERIMENT_NAME: Train
+
+
+HYPERPARAMETER_TUNING_PARAMETERS:
+  PRETRAINED_MODEL: yolov5s.pt
+  BATCH_SIZE: 2
+  IMAGE_SIZE: 320
+  EPOCH: 11
+  ITERATIONS: 2
+  PROJRCT: artifacts/hyperparameter_tuning
+  NAME: tune0
+
+  EXPERIMENT_NAME: Tune

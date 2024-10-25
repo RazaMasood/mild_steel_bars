@@ -1,0 +1,30 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://app.roboflow.com/ds/OG7fO1gRAV?key=3GBwFQWSfV
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  status_file: artifacts/data_validation/status_file.txt
+  required_file: ["train","train/labels","train/images", "valid","valid/labels","valid/images", "data.yaml"]
+  data_ingestion_root_dir: artifacts/data_ingestion
+
+model_training:
+  root_dir: artifacts/model_training
+  data_ingestion_root_dir: artifacts/data_ingestion
+  validation_status_file_path: artifacts/data_validation/status_file.txt
+  training_data: artifacts/data_ingestion/data.yaml
+
+hyperparameter_tuning:
+  root_dir: artifacts/hyperparameter_tuning
+  data_ingestion_root_dir: artifacts/data_ingestion
+  validation_status_file_path: artifacts/data_validation/status_file.txt
+  tuning_data: artifacts/data_ingestion/data.yaml
+
+model_evaluation:
+  repo_owner: RazaMasood
+  repo_name: mild_steel_bars
+  mlflow_uri: https://dagshub.com/RazaMasood/mild_steel_bars.mlflow
